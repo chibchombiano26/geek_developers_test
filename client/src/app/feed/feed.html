@@ -1,0 +1,31 @@
+
+<style>
+    .image-feed{
+        width: 100px;
+        height: 100px;
+    }
+</style>
+
+<div class="container">
+ 
+ <div class="widget">     
+     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <div upload=""  [destination]="'Images'" [showpush]="'true'"></div>   
+     </div>
+ </div>
+
+<div class="widget">     
+     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+
+         
+         <ul class="list-group">
+             <li class="list-group-item" *ngFor="let item of images">                 
+                 <img class="image-feed" src="{{item.url}}">                 
+             </li>             
+         </ul>
+         
+
+     </div>
+ </div>
+
+</div>

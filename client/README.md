@@ -1,0 +1,1 @@
+typings install dt~angular2-jwt --global --save

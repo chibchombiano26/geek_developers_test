@@ -1,0 +1,61 @@
+<div class="js-sidebar-content">
+  <header class="logo hidden-sm-down">
+    <a href="index.html">{{config.name}}</a>
+  </header>
+  <!-- seems like lots of recent admin template have this feature of user info in the sidebar.
+       looks good, so adding it and enhancing with notifications -->
+  <div class="sidebar-status hidden-md-up">
+    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              <span class="thumb-sm avatar pull-xs-right">
+        <img class="img-circle" [src]="user.picture" alt="...">
+              </span>
+      &nbsp;
+      {{user.name}}
+      <b class="caret"></b>
+    </a>
+    <!-- #notifications-dropdown-menu goes here when screen collapsed to xs or sm -->
+  </div>
+  <!-- main notification links are placed inside of .sidebar-nav -->
+  <ul class="sidebar-nav">
+    <li>
+      <a [routerLink]=" ['dashboard'] ">
+      <span class="icon">
+          <i class="fa fa-child"></i>
+      </span>
+        Dashboard
+      </a>
+    </li>        
+    <li>
+      <a [routerLink]=" ['feed-page'] ">
+      <span class="icon">
+          <i class="fa fa-feed"></i>
+      </span>
+        Feed      
+      </a>
+    </li>
+    <li>
+      <a [routerLink]=" ['profile-page'] ">
+      <span class="icon">
+          <i class="fa fa-edit"></i>
+      </span>
+        Profile page      
+      </a>
+    </li>
+    <li>
+      <a [routerLink]=" ['media-page'] ">
+      <span class="icon">
+          <i class="fa fa-camera"></i>
+      </span>
+        Media page      
+      </a>
+    </li>
+    <li>
+      <a [routerLink]=" ['admin-page'] ">
+      <span class="icon">
+          <i class="fa fa-list"></i>
+      </span>
+        Admin page      
+      </a>
+    </li>
+  </ul>
+</div>

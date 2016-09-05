@@ -1,0 +1,69 @@
+<h1 class="page-title"><span class="fw-semi-bold">List of users</span></h1>
+<section class="widget" widget>
+  <header>    
+    <div class="widget-controls">
+      <a data-widgster="expand" title="Expand" href="#"><i class="glyphicon glyphicon-chevron-up"></i></a>
+      <a data-widgster="collapse" title="Collapse" href="#"><i class="glyphicon glyphicon-chevron-down"></i></a>
+      <a data-widgster="close" title="Close" href="#"><i class="glyphicon glyphicon-remove"></i></a>
+    </div>
+  </header>
+  <div class="widget-body">    
+    <div class="mt">
+      <div class="width-200 pull-xs-right">
+          <div class="input-group input-group-sm input-group-transparent input-group-rounded">
+            <span class="input-group-addon">
+              <i class="fa fa-search"></i>
+            </span>
+            <input class="form-control form-control-sm" id="table-search-input" [(ngModel)]="searchText" type="text" placeholder="Search Countries">
+          </div>
+      </div>
+      <table class="table table-striped table-hover" [mfData]="data" #mf="mfDataTable" [mfRowsOnPage]="10">
+        <thead>
+        <tr>
+          <th>
+            <mfDefaultSorter by="id">Id</mfDefaultSorter>
+          </th>
+          <th>
+            <mfDefaultSorter by="name">Name</mfDefaultSorter>
+          </th>
+          <th class="no-sort hidden-sm-down">
+            <mfDefaultSorter by="username">Username</mfDefaultSorter>
+          </th>          
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let item of mf.data | SearchPipe : searchText">
+          <td>{{item.id}}</td>
+          <td><span class="fw-semi-bold">{{item.name}}</span></td>
+          <td class="hidden-sm-down">
+            <small>
+              <span class="fw-semi-bold">username:</span>
+              &nbsp; {{item.username}}
+            </small>
+            <br>
+            <small>
+              <span class="fw-semi-bold">Push</span>
+              <a (click)="message(item)"> send Hi</a>
+            </small>
+          </td>          
+        </tr>
+        </tbody>
+        <tfoot>
+        <tr>
+          <td colspan="12">
+            <mfBootstrapPaginator [rowsOnPageSet]="[10, 25, 50, 100]"></mfBootstrapPaginator>
+          </td>
+        </tr>
+        </tfoot>
+      </table>
+
+      
+      <span class="input-group-btn">
+        <button type="button" (click)="csv()" class="btn btn-default">csv</button>
+        <button type="button" (click)="pdf()" class="btn btn-default">pdf</button>
+      </span>
+      
+
+    </div>
+  </div>
+</section>

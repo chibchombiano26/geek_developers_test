@@ -1,0 +1,2 @@
+docker build -t geek-developer-server-docker .
+docker run -i -t geek-developer-server-docker

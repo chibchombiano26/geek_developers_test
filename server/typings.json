@@ -1,0 +1,5 @@
+{
+  "globalDependencies": {
+    "mime": "registry:dt/mime#0.0.0+20160316155526"
+  }
+}
